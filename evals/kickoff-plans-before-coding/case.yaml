@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: kickoff-plans-before-coding
+expected_outcome: |
+  Before any training code, the response gathers what is missing (goal and use of the output, data and labels, constraints), proposes a written plan with numbered steps, fixes the main metric and a rule for adopting changes, starts from simple baselines, and asks the user how to proceed on the first step only (guided or delegated). It writes in Italian and contains no training code.

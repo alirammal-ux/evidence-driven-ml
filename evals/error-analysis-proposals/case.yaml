@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: error-analysis-proposals
+expected_outcome: |
+  The response decomposes the 275 errors by type from the file (115 isolated and 25 partial false positives, 100 missed and 35 partial false negatives, 7 merges), gives the F1 ceiling of fixing each type (about 0.87 without isolated false positives, 0.88 with every missed cell found, 0.84 with the partial ones fixed), reads the small train-validation gap as a sign that the limit is not generalisation, proposes candidates with their cost, recommends one and leaves the choice to the user, and states how the change would be evaluated before running it. It does not implement anything yet.
+context:
+  scaffold_script: place-files.sh

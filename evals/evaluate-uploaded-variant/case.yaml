@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: evaluate-uploaded-variant
+expected_outcome: |
+  The response compares the two systems on the same 43 images with a paired bootstrap: object F1 +0.010 with a 95% interval of about [-0.001, +0.021], so the gain is not demonstrable; pixel Dice about +0.011 [+0.000, +0.022]; count error (MAE) demonstrably worse, about +1.4 cells per image, because the variant predicts more objects. It does not recommend adoption on the F1 and Dice gains alone, notes that one training run does not measure run-to-run variability, leaves the decision to the user and offers to record the result in the project plan.
+context:
+  scaffold_script: place-files.sh
