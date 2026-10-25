@@ -21,39 +21,11 @@ working that made it reliable:
 
 ## How it works
 
-The project goes through seven phases; the improvement loop (E) repeats until the results stop paying off.
+<p align="center"><img src="docs/lifecycle.svg" alt="Lifecycle: Understand, EDA, Plan, Baselines, Improve (the loop below), Test once, Deliver"></p>
 
-```mermaid
-flowchart LR
-    A["A · Understand<br/>docs, literature,<br/>kickoff interview"] --> B["B · EDA<br/>insights → decisions"]
-    B --> C["C · Plan<br/>metrics, data roles,<br/>decision rule"]
-    C --> D["D · Baselines<br/>and first model"]
-    D --> E["E · Improvement loop<br/>(repeated)"]
-    E --> E
-    E --> F["F · Freeze and test<br/>test set used once"]
-    F --> G["G · Delivery<br/>notebooks, README,<br/>slides"]
-```
+<p align="center"><img src="docs/improvement-loop.svg" width="560" alt="Improvement loop: Diagnose, Propose, You choose, Fix the rule, You run it, Evaluate, You judge, Record; a change is adopted only if it passes a rule written before the run"></p>
 
-Each pass of the improvement loop starts from the measured errors and stops three times for the user (in green):
-
-```mermaid
-flowchart TD
-    S1["1 · Diagnose<br/>error types and oracle ceilings"] --> S2["2 · Hypothesize<br/>cause, and what would refute it"]
-    S2 --> S3["3 · Propose<br/>ceiling, expected gain, cost, risk"]
-    S3 --> U1(["You choose"])
-    U1 --> S4["4 · Fix the protocol<br/>rule written before running"]
-    S4 --> S5["5 · Implement or prepare the run<br/>old behaviour as default, probe mode"]
-    S5 --> U2(["You run it on Kaggle / Colab<br/>and upload the results"])
-    S5 -. "no GPU needed" .-> S6
-    U2 --> S6["6 · Verify what came back<br/>same code, same recipe, same metrics"]
-    S6 --> S7["7 · Evaluate against the rule<br/>paired bootstrap, every guard metric"]
-    S7 --> S8["8 · Report<br/>intervals, verdict, limitations"]
-    S8 --> U3(["You judge"])
-    U3 --> R["Record in DECISIONS.md<br/>and PROPOSALS.md"]
-    R --> S1
-    classDef user fill:#1E7A46,color:#ffffff,stroke:#1E7A46
-    class U1,U2,U3 user
-```
+The green steps are the user's: Claude proposes, implements and measures; the user chooses, runs the GPU jobs and judges.
 
 ## Install
 
@@ -83,6 +55,7 @@ references/
 assets/templates/                PLAN.md, DECISIONS.md, HYPERPARAMETERS.md, PROPOSALS.md, GUIDE.md
 scripts/paired_bootstrap.py      paired-bootstrap interval of a metric difference (self-test with no arguments)
 evals/                           three test cases in the `claude plugin eval` format
+docs/                            the README diagrams and the script that draws them (matplotlib)
 ```
 
 ## Tests
