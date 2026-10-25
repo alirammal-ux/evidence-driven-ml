@@ -39,23 +39,29 @@ Claude Code loads it automatically in every project. It activates when you start
 dataset, analyse a model's errors, decide whether to adopt a change, or prepare notebooks and slides; you can also ask
 for it by name.
 
-## Contents
+## Structure
 
 ```
-SKILL.md                         the method in short: roles, lifecycle, improvement loop, rules
-references/
-  planning.md                    kickoff interview, framing, metrics, decision rule, baselines, steps
-  understanding-and-eda.md       documentation and literature, EDA for maximum insight, insights → decisions
-  improvement-loop.md            the loop in eight steps, with examples
-  decision-rules.md              roles of the data, paired bootstrap, gates, cross-validation, the test set
-  engineering.md                 repositories, code organisation, regression checks, Kaggle/Colab runs
-  project-docs.md                the five project documents
-  presentation.md                final notebooks and README
-  slides.md                      the slide style
-assets/templates/                PLAN.md, DECISIONS.md, HYPERPARAMETERS.md, PROPOSALS.md, GUIDE.md
-scripts/paired_bootstrap.py      paired-bootstrap interval of a metric difference (self-test with no arguments)
-evals/                           three test cases in the `claude plugin eval` format
-docs/                            the README diagrams and the script that draws them (matplotlib)
+.
+├── SKILL.md                          the method in short: roles, lifecycle, improvement loop, rules
+├── references/                       read by Claude only when a phase needs them
+│   ├── planning.md                   kickoff interview, framing, metrics, decision rule, baselines, steps
+│   ├── understanding-and-eda.md      documentation and literature, EDA for maximum insight, insights → decisions
+│   ├── improvement-loop.md           the loop in eight steps, with examples
+│   ├── decision-rules.md             roles of the data, paired bootstrap, gates, cross-validation, the test set
+│   ├── engineering.md                repositories, code organisation, regression checks, Kaggle/Colab runs
+│   ├── project-docs.md               the five project documents
+│   ├── presentation.md               final notebooks and README
+│   └── slides.md                     the slide style
+├── assets/
+│   └── templates/                    PLAN.md, DECISIONS.md, HYPERPARAMETERS.md, PROPOSALS.md, GUIDE.md
+├── scripts/
+│   └── paired_bootstrap.py           paired-bootstrap interval of a metric difference (self-test with no arguments)
+├── evals/                            three test cases in the `claude plugin eval` format
+│   └── make_inputs.py                regenerates the synthetic input files of the tests
+├── docs/                             the README diagrams and the script that draws them (matplotlib)
+├── README.md
+└── LICENSE                           MIT
 ```
 
 ## Tests
