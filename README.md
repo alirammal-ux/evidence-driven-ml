@@ -64,12 +64,20 @@ for it by name.
 └── LICENSE                           MIT
 ```
 
-## Tests
+## Tests (optional)
 
-`evals/` holds three test cases (starting a project, analysing errors, evaluating a variant). The input files of the
-second and third case are synthetic and are regenerated with `python evals/make_inputs.py .` from the skill folder. With
-Claude Code they run with `claude plugin eval . --allow-tools Write,Edit,Bash --scaffold`, with and without the skill.
-These are real, billed model runs.
+`evals/` contains three test cases: starting a project, analysing errors, evaluating a variant. You don't need them to use the skill.
+
+>**Cost warning:** running the evals makes real, billed model calls.
+
+From the skill folder:
+
+```bash
+python evals/make_inputs.py .     # regenerate the synthetic inputs (cases 2 and 3)
+claude plugin eval . --allow-tools Write,Edit,Bash --scaffold
+```
+
+Each case runs with and without the skill, so you can compare the results.
 
 ## Requirements
 
